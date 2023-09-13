@@ -1,0 +1,5 @@
+from fnmatch import fnmatch
+
+for i in range(нужный, нужный, шаг):
+  fnmatch(str(i), 'маска')
+  print(i, i // шаг)
