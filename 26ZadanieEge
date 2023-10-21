@@ -2,7 +2,7 @@ f = open('26.txt')
 n = int(f.readline())
 arr = []
 for x in range(n):
-  row. col = map(int, f.readline().split())
+  row, col = map(int, f.readline().split())
   arr.append((row, -col))
 arr.sort(reverse=True)
 prev_row = arr[0][0]
