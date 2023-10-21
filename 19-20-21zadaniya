@@ -1,0 +1,22 @@
+2kuychi
+def GameOver(s1, s2):
+    return s1 + s2 >= 75
+def P(s1, s2, n):
+    if GameOver(s1, s2): return False
+    return V(s1+1, s2, n - 1) or V(s1*2, s2, n - 1) or V(s1, s2+1, n - 1) or V(s1, s2*2, n - 1)
+def V(s1, s2, n):
+    if GameOver(s1, s2): return True
+    if n == 0: return False
+    return P(s1+1, s2, n) and P(s1*2, s2, n) and P(s1, s2+1, n) and P(s1, s2*2, n)
+
+1kucha
+
+def GameOver(s):
+    return s>= 75
+def P(s, n):
+    if GameOver(s): return False
+    return V(s+1, n - 1) or V(s*2, n - 1)
+def V(s, n):
+    if GameOver(s): return True
+    if n == 0: return False
+    return P(s+1, n) and P(s*2, n)
