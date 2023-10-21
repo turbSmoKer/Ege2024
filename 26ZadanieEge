@@ -1,0 +1,17 @@
+f = open('26.txt')
+n = int(f.readline())
+arr = []
+for x in range(n):
+  row. col = map(int, f.readline().split())
+  arr.append((row, -col))
+arr.sort(reverse=True)
+prev_row = arr[0][0]
+prev_col = abs(arr[0][1])
+for i in range(1, n):
+  row = arr[i][0]
+  col = abs(arr[i][0])
+  if row == prev_row and col - prev_col == 3:
+    print(row, col - 2)
+    break
+  prev_row = row
+  prev_col = col
