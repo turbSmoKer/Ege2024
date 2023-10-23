@@ -20,3 +20,6 @@ def V(s, n):
     if GameOver(s): return True
     if n == 0: return False
     return P(s+1, n) and P(s*2, n)
+
+
+При условии что ход был неудачным return P(s+1, n) and P(s*2, n) заменяется на return P(s+1, n) or P(s*2, n)
