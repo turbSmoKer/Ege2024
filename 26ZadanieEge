@@ -18,32 +18,3 @@ for i in range(1, n):
 
 
 
-f = open('12.txt')
-n = int(f.readline())
-arr = []
-for x in range(n):
-    row, col = map(int, f.readline().split())
-    arr.append((row, col))  # Store the column (seat) number as a positive value
-
-arr.sort(reverse=True)
-prev_row = arr[0][0]
-prev_col = arr[0][1]  # Use the positive column number
-maxim = 0
-ryad = 0
-
-for i in range(1, n):
-    row = arr[i][0]
-    col = arr[i][1]  # Use the positive column number
-
-    if row == prev_row and col - prev_col == 1:
-        maxim += 1
-        if maxim > max_maxim:
-            max_maxim = maxim
-            ryad = row
-    else:
-        maxim = 0
-
-    prev_row = row
-    prev_col = col
-
-print(ryad, max_maxim)
