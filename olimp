@@ -67,3 +67,37 @@ while fl:
         
 
 
+4.1)
+n = int(input())
+k = int(input())
+
+et_kv = int(str(k)[0]) - 1
+sch_kv_et = 0
+sch_do_fin_kv = 0
+et = 1
+itog_kv_kv = 0
+
+d = 1
+d_nach = 1
+fl = True
+if d == k:
+    print(1)
+    fl = False
+while fl:
+        if d > n:
+            sch_do_fin_kv = 1
+            itog_kv_kv = sch_kv_et
+            sch_kv_et = 0
+            et += 1
+            d = d_nach + 1
+            d_nach += 1
+        elif d == k:
+            sch_kv_et += 1
+            if sch_kv_et == itog_kv_kv:
+                sch_do_fin_kv += 1
+            print(itog_kv_kv * et_kv + sch_do_fin_kv)
+            f1 = False
+            break
+        else:
+            sch_kv_et += 1
+            d = int(str(d) + str(et))
