@@ -101,3 +101,19 @@ while fl:
         else:
             sch_kv_et += 1
             d = int(str(d) + str(et))
+
+
+
+5)
+m = int(input())  
+k = int(input())  
+strengths = [int(input()) for _ in range(m)] 
+
+strengths.sort()  
+
+min_strength_diff = float('inf')  
+for i in range(m - k + 1)
+    strength_diff = strengths[i + k - 1] - strengths[i]
+    min_strength_diff = min(min_strength_diff, strength_diff)
+
+print(min_strength_diff)
