@@ -1,0 +1,18 @@
+1)
+lines = open('27b.txt')
+a1, a2 = map(int, lines.readline().split())
+print(a1, a2)
+aarr = []
+counter = 0
+for line in range(a1):
+    aarr.append(int(lines.readline()))
+
+left, right = 0, 0
+for u in aarr:
+    for j in aarr:
+        if left != right and j - u > a2:
+            counter += 1
+        right += 1
+    left += 1
+
+print(counter)
