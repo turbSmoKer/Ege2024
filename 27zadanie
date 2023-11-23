@@ -16,3 +16,14 @@ for u in aarr:
     left += 1
 
 print(counter)
+
+2)
+lines = open('test.txt')
+minTime = int(lines.readline())
+much = int(lines.readline())
+print(a, b)
+left, right = 0, minTime
+arr = sorted([int(x) for x in lines.readlines()])
+counter = 0
+
+while much != right:
