@@ -1,0 +1,26 @@
+f = open('26.txt')
+a, b = map(int, f.readline().split())
+yx = a
+counter = 0
+arrq = []
+
+arr = []
+for x in range(b):
+    u = int(f.readline())
+    arr.append(u)
+
+
+
+arr.sort()
+print(arr)
+for i in arr:
+    if a - i > 0:
+        arrq.append(i)
+        a -= i
+        counter += 1
+    else:
+        print(counter)
+        print(max(arr) + a)
+        
+        break
+    
