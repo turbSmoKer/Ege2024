@@ -1,0 +1,10 @@
+from ipaddress import *
+
+k = 0
+nets = ip_network('192.168.32.160/255.255.255.240', 0)
+for net in nets:
+    b = [bin(inx(x))[2:].zfill(8) for x in str(net).split('.')]
+    s = ''.join(b).count('1')
+    if s % 2 == 0:
+        k += 1
+        print(k, net, b)
