@@ -1,26 +1,10 @@
-f = open('26.txt')
-a, b = map(int, f.readline().split())
-yx = a
-counter = 0
-arrq = []
+from ipaddress import *
+k = 0
+nets = ip_network('158.132.161.128/255.255.255.128', 0)
 
-arr = []
-for x in range(b):
-    u = int(f.readline())
-    arr.append(u)
-
-
-
-arr.sort()
-print(arr)
-for i in arr:
-    if a - i > 0:
-        arrq.append(i)
-        a -= i
-        counter += 1
-    else:
-        print(counter)
-        print(max(arr) + a)
-        
-        break
-    
+for net in nets:
+    b = [bin(int(x))[2:].zfill(8) for x in str(net).split('.')]
+    s = ''.join(b)
+    if s[len(s) - 1] == 1:
+        k += 1
+print(k)
