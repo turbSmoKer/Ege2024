@@ -8,3 +8,5 @@ for net in nets:
     if s[len(s) - 1] == 1:
         k += 1
 print(k)
+
+https://stepik.org/lesson/1136055/step/9?unit=1147683
