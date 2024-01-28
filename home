@@ -17,3 +17,17 @@ for n in range(10000, 4, -1):
         break
 
 https://stepik.org/lesson/1216130/step/3?unit=1229401
+
+from itertools import *
+arr = []
+k = 0
+for x in product(sorted('БГДНОУ'), repeat=6): 
+    s = ''.join(x)
+    k += 1
+    if k % 2 != 0 and s[0] != 'Б' and s.count('Н') >= 2 and not 'У' in s:
+        arr.append(k)
+
+print(k)
+
+
+https://stepik.org/lesson/1216130/step/4?unit=1229401
