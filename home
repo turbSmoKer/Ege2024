@@ -1,7 +1,7 @@
 s = ''
+arr = []
 
-
-for n in range(3, 10001):
+for n in range(10000, 4, -1):
     s = '5' + '2' * n
     while '52' in s or '2222' in s or '1122' in s:
         if '52' in s:
@@ -15,4 +15,5 @@ for n in range(3, 10001):
     if sum == 64:
         print(n)
         break
-        
+
+https://stepik.org/lesson/1216130/step/3?unit=1229401
