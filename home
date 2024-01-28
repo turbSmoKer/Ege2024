@@ -1,12 +1,18 @@
-from ipaddress import *
-k = 0
-nets = ip_network('158.132.161.128/255.255.255.128', 0)
+s = ''
 
-for net in nets:
-    b = [bin(int(x))[2:].zfill(8) for x in str(net).split('.')]
-    s = ''.join(b)
-    if s[len(s) - 1] == 1:
-        k += 1
-print(k)
 
-https://stepik.org/lesson/1136055/step/9?unit=1147683
+for n in range(3, 10001):
+    s = '5' + '2' * n
+    while '52' in s or '2222' in s or '1122' in s:
+        if '52' in s:
+            s = s.replace('52', '11', 1)
+        if '2222' in s:
+            s = s.replace('2222', '5', 1)
+        if '1122' in s:
+            s = s.replace('1122', '25', 1) 
+    sum = 0
+    sum = s.count('5') * 5 + s.count('2') *  2 + s.count('1') 
+    if sum == 64:
+        print(n)
+        break
+        
