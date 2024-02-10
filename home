@@ -25,13 +25,18 @@ for i in range(len(f) - 1):
     first = int(f[i])
     second = int(f[i + 1])
     minimum = 0
-    if first >= second: minimum += second
-    else: minimum += first
+    if first >= second and len(str(second)) == 3: minimum += second
+    
+    elif first <= second and len(str(first)) == 3: minimum += first
+
+    elif len(str(first)) != 3 or len(str(second)) != 3: continue
     if (len(str(first)) == 3 or len(str(second)) == 3):
         if (first + second) % minimum == 0 and len(str(minimum)) == 3:
             if (str(minimum)[2]) == '5':
                 count += 1
                 arr.append((first + second))
 print(count, max(arr))
+
+
 
 https://stepik.org/lesson/1216130/step/10?unit=1229401
