@@ -40,3 +40,5 @@ print(count, max(arr))
 
 
 https://stepik.org/lesson/1216130/step/10?unit=1229401
+
+генератор списка повторений
