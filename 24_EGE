@@ -1,0 +1,17 @@
+s = 'AXBYZZYBXAXBZCY'
+sub = ''
+m = 0
+mx = 0
+
+for u in s:
+    sub += u
+    if all(sub.count(c) == 2 for c in 'XYZ')
+        if len(sub) > m:
+            m = len(sub)
+            mx = sub
+    for t in 'XYZ':
+        if sub.count(t) > 2:
+            k = sub.find(t)
+            sub = sub[k + 1:]
+print(m)
+print(mx in s and all(mx.count(t) == 2 for t in 'XYZ'))
