@@ -1,44 +1,16 @@
-s = ''
-arr = []
+s = open('24.txt').readline()
+c = 0
+m = 0
+sub = ''
 
-for n in range(10000, 4, -1):
-    s = '5' + '2' * n
-    while '52' in s or '2222' in s or '1122' in s:
-        if '52' in s:
-            s = s.replace('52', '11', 1)
-        if '2222' in s:
-            s = s.replace('2222', '5', 1)
-        if '1122' in s:
-            s = s.replace('1122', '25', 1) 
-    sum = 0
-    sum = s.count('5') * 5 + s.count('2') *  2 + s.count('1') 
-    if sum == 64:
-        print(n)
-        break
-
-https://stepik.org/lesson/1216130/step/3?unit=1229401
-
-f = open('20.txt').readlines()
-count = 0
-arr = []
-for i in range(len(f) - 1):
-    first = int(f[i])
-    second = int(f[i + 1])
-    minimum = 0
-    if first >= second and len(str(second)) == 3: minimum += second
-    
-    elif first <= second and len(str(first)) == 3: minimum += first
-
-    elif len(str(first)) != 3 or len(str(second)) != 3: continue
-    if (len(str(first)) == 3 or len(str(second)) == 3):
-        if (first + second) % minimum == 0 and len(str(minimum)) == 3:
-            if (str(minimum)[2]) == '5':
-                count += 1
-                arr.append((first + second))
-print(count, max(arr))
-
-
-
-https://stepik.org/lesson/1216130/step/10?unit=1229401
-
-генератор списка повторений
+for u in s:
+    sub += u
+    if all(sub.count(c) <= 8 for c in 'XYZ') and 'V' not in s and 'X' not in s and 'Z' not in s:
+        if len(sub) > m:
+            m = len(sub)
+            mx = sub
+    for t in 'XYZ':
+        if sub.count(t) > 8:
+            k = sub.find(t)
+            sub = sub[k + 1:]
+print(m)
