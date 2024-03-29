@@ -1,17 +1,40 @@
-s = open('24.txt').readline()
-c = 0
-m = 0
-sub = ''
+f = open('26.txt')
+arr = []
+s = 0
+ar = []
+k = 0
+tr = True
+p = 0
 
-for u in s:
-    sub += u
-    if all(sub.count(c) <= 8 for c in 'XYZ') and 'V' not in s and 'X' not in s and 'Z' not in s:
-        if len(sub) > m:
-            m = len(sub)
-            mx = sub
-    for t in 'XYZ':
-        if sub.count(t) > 8:
-            k = sub.find(t)
-            sub = sub[k + 1:]
-print(m)
-10.2 9
+a, b = [int(x) for x in f.readline().split()]
+for u in f:
+    u = int(u)
+    arr.append(u)
+
+arr.sort()
+
+for i in range(b):
+    print(i, a, p, b, s)
+    p = arr[i]
+    if s + p <= a:
+        s += p
+        ar.append(p)
+
+    else:
+        print(i, a, p, b, s)
+        last = arr[i - 1]
+        while tr == True:
+            print('WIII', k, i, a, p, arr[i + 1], arr[i + 2])
+            if s + arr[i + k] - last <= a:
+                k += 1
+            else:
+                k -= 1
+                s += arr[i + k]
+                ar.append(arr[i + k])
+                tr = False
+        break
+                
+
+print(len(ar), max(ar), ar)
+            
+24.2.2
