@@ -5,3 +5,15 @@ for a in range(1000):
     if all(f(x, y, a) == 1 for x in range(-100, 100) for y in range(-100, 100)):
         print(a)
         break
+
+
+отрезки (при макс A = list(range()) | при мин A = []) (при False - True | при True - False)
+
+P = list(range(10, 25+1))
+Q = list(range(15, 30+1))
+A = list(range(25, 40+1))
+A = list(range(100))
+for x in range(100):
+    if (((x in Q) <= (x not in R)) and (x in A) and (x not in P)) == True:
+        A.removw(x)
+print(A)
