@@ -1,41 +1,8 @@
-f = open('26.txt')
-arr = []
-s = 0
-ar = []
-k = 0
-tr = True
-p = 0
+B = list(range(24, 91))
+C = list(range(47, 116))
+a = []
+for x in range(1000):
+    if (x in C) <= (((x not in a) and (x in B)) <= (x not in C)) == False:
+        a.append(x)
 
-a, b = [int(x) for x in f.readline().split()]
-for u in f:
-    u = int(u)
-    arr.append(u)
-
-arr.sort()
-
-for i in range(b):
-    print(i, a, p, b, s)
-    p = arr[i]
-    if s + p <= a:
-        s += p
-        ar.append(p)
-
-    else:
-        print(i, a, p, b, s)
-        last = arr[i - 1]
-        while tr == True:
-            print('WIII', k, i, a, p, arr[i + 1], arr[i + 2])
-            if s + arr[i + k] - last <= a:
-                k += 1
-            else:
-                k -= 1
-                s += arr[i + k]
-                ar.append(arr[i + k])
-                tr = False
-        break
-                
-
-print(len(ar), max(ar), ar)
-            
-24.2.2
-24.3.2
+print(a)
