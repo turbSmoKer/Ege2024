@@ -1,0 +1,6 @@
+def NS(n, q):
+    r = ''
+    while n != 0:
+        r += str(n % q)
+        n = n // q
+    return r[::-1]
